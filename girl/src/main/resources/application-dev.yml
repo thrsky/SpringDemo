@@ -1,0 +1,7 @@
+server:
+  port: 8082
+
+#如何把配置放在一起
+girl:
+  cupSize: B
+  age: 18
