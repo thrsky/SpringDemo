@@ -4,6 +4,8 @@ import com.springboot.thrsky.girl.Entity.Girl;
 import com.springboot.thrsky.girl.Respository.GirlRepository;
 import com.springboot.thrsky.girl.Service.GirlService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,16 +34,18 @@ public class GirlController {
 
     /**
      * 添加一个属性
-     * @param age
-     * @param cupSize
      * @return
      */
     @PostMapping(value = "/girls")
-    public Girl girlAdd(@RequestParam("age") Integer age,
-                          @RequestParam("cupSize") String cupSize){
-        Girl girl=new Girl();
-        girl.setAge(age);
-        girl.setCupSize(cupSize);
+    public Girl girlAdd(@Validated Girl girl , BindingResult bindingResult){
+        //验证之后的信息会赋给BindingResult中
+        if(bindingResult.hasErrors()){
+            System.out.println(bindingResult.getFieldError().getDefaultMessage());
+            return null;
+        }
+
+        girl.setAge(girl.getAge());
+        girl.setCupSize(girl.getCupSize());
         return girlRepository.save(girl);
 
     }
