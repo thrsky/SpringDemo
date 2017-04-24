@@ -33,7 +33,7 @@ public class GirlController {
     }
 
     /**
-     * 添加一个属性
+     * 插入一个女生
      * @return
      */
     @PostMapping(value = "/girls")

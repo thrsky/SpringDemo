@@ -4,7 +4,7 @@ spring:
   datasource:
       # 注意在pom.xml中引入时  不要把MySQL驱动的版本设为RELEASE  否则下面会配置出错
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/dbgirl
+      url: jdbc:mysql://localhost:3306/dbgirl
       username: root
       password: 19960411
   jpa:
