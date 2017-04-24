@@ -15,6 +15,9 @@ public class GirlController {
     @Autowired
     private GirlRepository girlRepository;
 
+    @Autowired
+    private GirlService girlService;
+
     /**
      * 获取女生列表
      * @return
@@ -84,6 +87,14 @@ public class GirlController {
     @DeleteMapping(value = "/girls/{id}")
     public void deleteGirl(@PathVariable("id") Integer id){
         girlRepository.delete(id);
+    }
+
+    /**
+     * 同时插入两个女生
+     */
+    @PostMapping(value = "/girls/two")
+    public void girlTwo(){
+        girlService.insertTwo();
     }
 
 }
