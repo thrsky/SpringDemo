@@ -48,6 +48,8 @@ public class Girl {
         this.age = age;
     }
 
+
+    //方便以后的输出
     @Override
     public String toString() {
         return "Girl{" +
