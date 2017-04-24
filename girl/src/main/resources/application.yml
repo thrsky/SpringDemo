@@ -1,9 +1,16 @@
-#如何把配置放在一起
-girl:
-  cupSize: B
-  age: 18
-
-
 spring:
   profiles:
     active: prod
+  datasource:
+      # 注意在pom.xml中引入时  不要把MySQL驱动的版本设为RELEASE  否则下面会配置出错
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/dbgirl
+      username: root
+      password: 19960411
+  jpa:
+    hibernate:
+      #  create ：程序启动时创建表  数据库中已经有表时会覆盖
+      #  update ：
+      #  create-drop
+      ddl-auto: update
+    show-sql: true
