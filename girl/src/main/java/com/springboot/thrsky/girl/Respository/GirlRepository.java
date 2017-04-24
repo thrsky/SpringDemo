@@ -1,5 +1,6 @@
-package com.springboot.thrsky.girl;
+package com.springboot.thrsky.girl.Respository;
 
+import com.springboot.thrsky.girl.Entity.Girl;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

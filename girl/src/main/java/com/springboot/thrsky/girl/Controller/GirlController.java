@@ -1,5 +1,8 @@
-package com.springboot.thrsky.girl;
+package com.springboot.thrsky.girl.Controller;
 
+import com.springboot.thrsky.girl.Entity.Girl;
+import com.springboot.thrsky.girl.Respository.GirlRepository;
+import com.springboot.thrsky.girl.Service.GirlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

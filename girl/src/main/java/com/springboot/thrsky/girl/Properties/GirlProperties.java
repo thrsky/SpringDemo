@@ -1,4 +1,4 @@
-package com.springboot.thrsky.girl;
+package com.springboot.thrsky.girl.Properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

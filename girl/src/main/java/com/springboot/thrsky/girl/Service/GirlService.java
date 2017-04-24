@@ -1,5 +1,7 @@
-package com.springboot.thrsky.girl;
+package com.springboot.thrsky.girl.Service;
 
+import com.springboot.thrsky.girl.Entity.Girl;
+import com.springboot.thrsky.girl.Respository.GirlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
