@@ -22,3 +22,6 @@
    @PathVariable ： 获取URL中的数据
    @RequestParam ： 获取请求参数的值   
    @GetMapping ： 组合注解
+  
+>* 方法中参数过多：  
+   可以直接把方法中的属性改为对象，URL中传入的方式不用变
