@@ -3,11 +3,13 @@ package com.springboot.thrsky.girl.Controller;
 import com.springboot.thrsky.girl.Entity.Girl;
 import com.springboot.thrsky.girl.Respository.GirlRepository;
 import com.springboot.thrsky.girl.Service.GirlService;
+import com.springboot.thrsky.girl.dto.Result;
+import com.springboot.thrsky.girl.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -37,16 +39,17 @@ public class GirlController {
      * @return
      */
     @PostMapping(value = "/girls")
-    public Girl girlAdd(@Validated Girl girl , BindingResult bindingResult){
+    public Result<Girl> girlAdd(@Valid Girl girl , BindingResult bindingResult){
         //验证之后的信息会赋给BindingResult中
         if(bindingResult.hasErrors()){
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-            return null;
+
+            return ResultUtil.failed(1,bindingResult.getFieldError().getDefaultMessage());
         }
 
         girl.setAge(girl.getAge());
         girl.setCupSize(girl.getCupSize());
-        return girlRepository.save(girl);
+        girl.setMoney(girl.getMoney());
+        return ResultUtil.success(girlRepository.save(girl));
 
     }
 
@@ -102,6 +105,12 @@ public class GirlController {
     @PostMapping(value = "/girls/two")
     public void girlTwo(){
         girlService.insertTwo();
+    }
+
+    @GetMapping(value = "/girls/getAge/{id}")
+    public Result<Girl> getAge(@PathVariable("id") Integer id)
+            throws Exception{
+        return girlService.getAge(id);
     }
 
 }
