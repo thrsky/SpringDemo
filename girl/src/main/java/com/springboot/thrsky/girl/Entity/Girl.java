@@ -21,6 +21,16 @@ public class Girl {
     @Min(value = 18,message = "未成年少女禁止入内")
     private Integer age;
 
+    private Integer money;
+
+    public Integer getMoney() {
+        return money;
+    }
+
+    public void setMoney(Integer money) {
+        this.money = money;
+    }
+
     public Girl() {
     }
 
@@ -49,13 +59,13 @@ public class Girl {
     }
 
 
-    //方便以后的输出
     @Override
     public String toString() {
         return "Girl{" +
                 "id=" + id +
                 ", cupSize='" + cupSize + '\'' +
                 ", age=" + age +
+                ", money=" + money +
                 '}';
     }
 }
