@@ -16,12 +16,12 @@
 >* 怎么在一个项目中同时使用多种配置文件，可以一种用idea启动，一种用mvn编译后jar方式启动
 
 >* 基本注解：  
-   @Controller ：处理http请求
+   @Controller ：处理http请求   
    @RestController ： 是一个组合注解：原来返回Json需要@ResponseBody配合@Controller
-   @RequestMapping ： 配置URL映射
-   @PathVariable ： 获取URL中的数据
+   @RequestMapping ： 配置URL映射    
+   @PathVariable ： 获取URL中的数据    
    @RequestParam ： 获取请求参数的值   
-   @GetMapping ： 组合注解
+   @GetMapping ： 组合注解   
   
 >* 方法中参数过多：  
    可以直接把方法中的属性改为对象，URL中传入的方式不用变
